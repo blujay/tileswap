@@ -36,7 +36,7 @@ var myTile = function(el) {
     tile = parseInt(el.id, 10);
     document.getElementById("my-tile").innerHTML=tile;
     makeMove();
-}; 
+};
 
 function makeTiles(array) {
     listContainer = document.createElement("div");
@@ -66,7 +66,7 @@ makeTiles(tileList);
 function swapTiles(array) {
     //var tile = parseInt(prompt("Please enter a number to swap with 0"), 10);
     // identify the index position of my tile
-    
+
     var tilePos = array.indexOf(tile);
     // identify the index position of the blank tile
     document.getElementById("my-tile-pos").innerHTML = tilePos;
@@ -79,13 +79,7 @@ function swapTiles(array) {
 }
 
 function isSorted(array) {
-    var len = array.length - 1;
-    for (var i = 0; i < len; ++i) {
-        if (array[i] > array[i + 1]) {
-            return false;
-        }
-    }
-    return true;
+  return array.toString() === array.slice().sort().toString();
 }
 //Play the game
 function startGame() {
